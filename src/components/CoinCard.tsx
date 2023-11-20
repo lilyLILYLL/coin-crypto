@@ -7,8 +7,8 @@ type Props = {
 };
 export const CoinCard = (props: Props) => {
     return (
-        <div className="my-16 flex flex-col gap-2 items-center">
-            <Image src={props.coin.src} alt={props.coin.name} width={130} height={130} />
+        <div className="flex flex-col gap-2 items-center ">
+            <Image src={props.coin.src} alt={props.coin.name} width={100} height={100} />
 
             <div className={`${defaultTextStyle} text-2xl`}>
                 {props.coin.name}

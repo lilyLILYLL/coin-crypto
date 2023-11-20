@@ -1,11 +1,13 @@
 "use client";
-import { Tittle, CoinCard } from "@components";
+import { Tittle, CoinCard, Button } from "@components";
 import React from "react";
 import axios from "axios";
 import { CoinModel } from "@shared";
+import { useDimensions } from "@hooks";
 
 const Home = () => {
     const [top4Coins, setTop4Coins] = React.useState<CoinModel[] | undefined>();
+    const dimensions = useDimensions();
 
     React.useEffect(() => {
         axios
@@ -17,18 +19,21 @@ const Home = () => {
             .catch((err) => console.log(err));
     }, []);
 
-    console.log(top4Coins);
     return (
-        <section id="home" className="pt-[200px] min-h-screen w-full text-3xl  bg-gradient-to-t from-black from-30% to-darkPurple">
+        <section id="home" className="pt-[200px] min-h-screen w-full text-3xl  bg-gradient-to-t from-black from-30% to-darkPurple lg:p-28 p-10">
             {/* TITTLE */}
-            <Tittle name="TRACK AND TRADE CRYPTO CURRENCIES" />
+            <Tittle name="TRACK AND TRADE CRYPTO CURRENCIES" gradientFrom={3} />
 
             {/* TOP 4 COINS */}
-            <div className="flex flex-row gap-28 justify-center">
-                {top4Coins?.map((coin, index) => {
-                    return <CoinCard coin={coin} key={index} />;
-                })}
-            </div>
+            {dimensions.width > 600 && (
+                <div className="flex flex-row gap-28 justify-center flex-wrap py-20">
+                    {top4Coins?.map((coin, index) => {
+                        return <CoinCard coin={coin} key={index} />;
+                    })}
+                </div>
+            )}
+
+            {!!dimensions.width && dimensions.width <= 600 && <Button name="See Prices &#8623;" href="#market" />}
         </section>
     );
 };
