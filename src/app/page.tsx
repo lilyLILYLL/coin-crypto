@@ -7,9 +7,9 @@ export default function App() {
     return (
         <div>
             <Home />
+            <Market />
             <ChooseUs />
             <Join />
-            <Market />
         </div>
     );
 }
