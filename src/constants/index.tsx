@@ -1,6 +1,7 @@
 import { ReactElement } from "react";
 import { IconWallet, IconPencilBolt, IconChecklist, IconDeviceMobileMessage, IconMoneybag, IconStack } from "@tabler/icons-react";
 export const defaultTextStyle = "font-space-grotesk font-bold text-white ";
+
 export type Benefit = {
     icon: JSX.Element;
     title: string;

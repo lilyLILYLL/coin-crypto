@@ -5,8 +5,8 @@ import { IconBrandFacebook, IconBrandTwitter, IconBrandYoutube, IconBrandDiscord
 import { defaultTextStyle } from "@constants";
 export const Footer = () => {
     return (
-        <div className="relative">
-            <div className="flex flex-col gap-4 mx-auto w-fit pt-20">
+        <div>
+            <div className="flex flex-col gap-4 mx-auto w-fit pt-20 bottom-4 z-20 h-fit">
                 <div className="flex flex-row gap-4 ">
                     <IconBrandTwitter width={30} height={30} color="white" />
                     <IconBrandFacebook width={30} height={30} color="white" />
@@ -18,7 +18,7 @@ export const Footer = () => {
                     <p className={`${defaultTextStyle} text-base text-light`}>Terms of Use </p>
                 </div>
             </div>
-            <Image src={FooterBg} alt="FooterBg" className="w-full absolute top-[-10px]" />
+            <Image src={FooterBg} alt="FooterBg" className="w-full  bg-black absolute left-0 " />
         </div>
     );
 };
