@@ -12,6 +12,7 @@
     "@reduxjs/toolkit": "^1.9.7",
     "@tabler/icons-react": "^2.41.0",
     "@types/react-redux": "^7.1.30",
+    "axios": "^1.6.2",
     "next": "latest",
     "react": "latest",
     "react-anchor-link-smooth-scroll": "^1.0.12",
